@@ -45,24 +45,20 @@ table {
 }
 .cell:after{
     background-color: gray;
-    border: none;
 }
 
 .mine {
     background-color: rgb(255, 196, 0);
+    border-bottom: 5px solid rgb(154, 121, 12);
+    border-left: 5px solid #ffffff;
+    border-top: 5px solid #ffffff;
+    border-right: 5px solid rgb(198, 156, 16);
 }
 
 .show {
     background-color: gray
 }
 
-/* .mark {
-    background-color: rgb(211, 193, 167);
-} */
-
-/* .selected{
-
-} */
 button {
     font-family: myFirstFont, 'Segoe UI', Tahoma;
     margin-top: 20px;
