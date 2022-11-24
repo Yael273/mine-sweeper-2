@@ -9,16 +9,18 @@ body {
 }
 /* .pop{
     background-color: rgb(236, 231, 222);
-    background-color: rgb(231, 162, 179);
+    background-color: rgb(226, 171, 184);
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
     display: inline-block;
+    border: 2px solid black;
+    box-shadow: 40px 50px 10px 1px;
 } */
 H1 {
     color: rgb(255, 196, 0);
     /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
-/*     -webkit-text-stroke: 0.2px rgb(0, 0, 0); */
+    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
     font-weight: bolder;
     font-size: 35px;
 }
@@ -61,7 +63,6 @@ table {
 
 button {
     font-family: myFirstFont, 'Segoe UI', Tahoma;
-    font-weight: bold;
     margin-top: 20px;
     /* border: none; */
     /* border-radius: 10px; */

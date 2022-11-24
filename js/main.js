@@ -164,7 +164,7 @@ function cellClicked(event, elCell, i, j) {
         if (event.button === 2) {
             cell.isMarked = true
             gBoard.markedCount++
-            checkFlagsCount()
+
         }
     }
 
@@ -316,11 +316,27 @@ function showAllMines() {
 }
 
 
-
 // function checkFlagsCount() {
 //     if (gLevel.MINES === 0) return
 //     else {
 //         var elFlag = document.querySelector('.flagCount')
-//         elFlag.innerHTML = `0${--gLevel.MINES}`
+//         elFlag.innerText = '0' + gGame.markedCount
 //     }
 // }
+
+function flagCounter() {
+    if (gLevel.MINES === 0) return
+    else {
+        var elFlag = document.querySelector('.flagCount')
+        elFlag.innerHTML = `0${--gLevel.MINES}`
+    }
+}
+
+function checkFlagsCount() {
+    var elFlagCount = document.querySelector('.flagCount')
+    if (gLevel.MINES < 10) {
+        elFlagCount.innerText = '0' + gGame.markedCount
+    } else {
+        elFlagCount.innerText = gGame.markedCount
+    }
+}
