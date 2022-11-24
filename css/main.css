@@ -18,7 +18,7 @@ body {
 H1 {
     color: rgb(255, 196, 0);
     /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
-    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+/*     -webkit-text-stroke: 0.2px rgb(0, 0, 0); */
     font-weight: bolder;
     font-size: 35px;
 }
@@ -61,6 +61,7 @@ table {
 
 button {
     font-family: myFirstFont, 'Segoe UI', Tahoma;
+    font-weight: bold;
     margin-top: 20px;
     /* border: none; */
     /* border-radius: 10px; */
