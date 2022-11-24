@@ -2,7 +2,7 @@ body {
     text-align: center;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: myFirstFont, 'Segoe UI', Tahoma;
-    font-weight: bold;
+/*     font-weight: bold; */
     background-color: rgb(236, 231, 222);
     /* background-color: rgb(231, 162, 179); */
     /* background-color: rgb(97, 97, 97); */
@@ -20,7 +20,7 @@ body {
 H1 {
     color: rgb(255, 196, 0);
     /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
-/*     -webkit-text-stroke: 0.2px rgb(0, 0, 0); */
+    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
     font-weight: bolder;
     font-size: 35px;
 }
