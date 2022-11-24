@@ -1,0 +1,120 @@
+body {
+    text-align: center;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: myFirstFont, 'Segoe UI', Tahoma;
+    /* font-weight: bold; */
+    background-color: rgb(236, 231, 222);
+    /* background-color: rgb(231, 162, 179); */
+    /* background-color: rgb(97, 97, 97); */
+}
+/* .pop{
+    background-color: rgb(236, 231, 222);
+    background-color: rgb(231, 162, 179);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: inline-block;
+} */
+H1 {
+    color: rgb(255, 196, 0);
+    /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
+    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+table {
+    margin: auto;
+    background-color: rgb(55, 55, 55);
+}
+
+.cell {
+    background-color: rgb(179, 179, 179);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 5px solid #7B7B7B;
+    border-left: 5px solid #ffffff;
+    border-top: 5px solid #ffffff;
+    border-right: 5px solid #7B7B7B;
+}
+
+.cell:active {
+    background-color: gray;
+    border: none;
+}
+.cell:after{
+    background-color: gray;
+    border: none;
+}
+
+.mine {
+    background-color: rgb(255, 196, 0);
+}
+
+.show {
+    background-color: gray
+}
+
+/* .mark {
+    background-color: rgb(211, 193, 167);
+} */
+
+/* .selected{
+
+} */
+button {
+    font-family: myFirstFont, 'Segoe UI', Tahoma;
+    margin-top: 20px;
+    /* border: none; */
+    /* border-radius: 10px; */
+    padding: 10px;
+    background-color: rgb(179, 179, 179);
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+}
+
+button:active {
+    background-color: gray;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.smileyFace {
+    margin-top: -10px;
+}
+
+.timer {
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: rgb(20, 19, 19);
+    padding: 10px;
+    color: rgb(255, 196, 0);
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+}
+
+.flagCount {
+    margin-left: 10px;
+    display: inline-block;
+    background-color: rgb(20, 19, 19);
+    padding: 10px;
+    color: rgb(255, 196, 0);
+    border-bottom: 2px solid #7B7B7B;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #7B7B7B;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/font/Retro-Gaming.ttf);
+}
