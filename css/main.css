@@ -2,7 +2,7 @@ body {
     text-align: center;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: myFirstFont, 'Segoe UI', Tahoma;
-/*     font-weight: bold; */
+    /* font-weight: bold; */
     background-color: rgb(236, 231, 222);
     /* background-color: rgb(231, 162, 179); */
     /* background-color: rgb(97, 97, 97); */
@@ -114,5 +114,5 @@ button:hover {
 
 @font-face {
     font-family: myFirstFont;
-    src: url(../font/Retro-Gaming.ttf);
+    src: url(/font/Retro-Gaming.ttf);
 }

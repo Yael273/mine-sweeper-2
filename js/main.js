@@ -4,7 +4,7 @@ const EMPTY = ''
 const MINE = '💣'
 const SMILEY_FACE = '🙂'
 
-var start = Date.now();
+var start = Date.now()
 var gBoard
 var gTimer
 var isFirstClick = false
@@ -26,7 +26,7 @@ function initGame() {
         markedCount: gLevel.MINES,
         secsPassed: 0
     }
-    isFirstClick = true;
+    isFirstClick = true
     clearInterval(gTimer)
     var elHeader1 = document.querySelector('h1')
     elHeader1.innerText = 'MINESWEEPER'
@@ -37,7 +37,7 @@ function initGame() {
     gBoard = buildBoard()
     console.log('buildBoard(gBoard):', buildBoard(gBoard))
     renderBoard(gBoard)
-    checkFlagsCount();
+    checkFlagsCount()
 
 }
 
@@ -100,9 +100,7 @@ function cellMarked(currCell) {
     } else {
      return EMPTY
     }
-    // if (currCell.isMarked && currCell === FLAG){
-    //     return EMPTY
-    // }
+   
 }
 
 
@@ -140,16 +138,16 @@ function renderCell(location, value) {
 }
 
 function cellClicked(event, elCell, i, j) {
-    console.log(event)
-    console.log('gBoard[i][j]:', gBoard[i][j])
+    
     const cell = gBoard[i][j]
 
     /////////////////////////////////////
+
     if (isFirstClick) {
         createMines(gBoard, i, j)
         setMinesNegsCount(gBoard)
         console.log(gBoard)
-        isFirstClick = false;
+        isFirstClick = false
         gGame.isOn = true
     }
 
@@ -172,14 +170,14 @@ function cellClicked(event, elCell, i, j) {
 
     if (!cell.isMarked) {
         if (!cell.isShown) {
-            cell.isShown = true;
-            gGame.shownCount++;
+            cell.isShown = true
+            gGame.shownCount++
         }
 
         if (gGame.shownCount === 1) {
             var start = Date.now();
             gTimer = setInterval(function () {
-                createTime(Date.now() - start);
+                createTime(Date.now() - start)
             }, 1000)
         }
 
@@ -187,13 +185,13 @@ function cellClicked(event, elCell, i, j) {
         if (!cell.isMine) {
             if (gGame.isOn) {
                 if (cell.minesAroundCount === 0) {
-                    expandShown(gBoard, elCell, i, j, event);
+                    expandShown(gBoard, elCell, i, j, event)
                 }
             }
         }
     }
-    checkGameOver();
-    renderBoard(gBoard);
+    checkGameOver()
+    renderBoard(gBoard)
 
 
 }
@@ -201,35 +199,35 @@ function cellClicked(event, elCell, i, j) {
 
 function checkGameOver() {
 
-    var isGameOver = false;
-    var isWinner;
-    var numsCount = 0;
-    var flagsCount = 0;
+    var isGameOver = false
+    var isWinner
+    var numsCount = 0
+    var flagsCount = 0
     for (var i = 0; i < gLevel.SIZE; i++) {
         for (var j = 0; j < gLevel.SIZE; j++) {
             if (gBoard[i][j].isMine && gBoard[i][j].isShown) {
-                isGameOver = true;
-                isWinner = false;
+                isGameOver = true
+                isWinner = false
             }
             if (!gBoard[i][j].isMine && gBoard[i][j].isShown) {
-                numsCount++;
+                numsCount++
             }
             if (gBoard[i][j].isMine && !gBoard[i][j].isShown && gBoard[i][j].isMarked) {
-                flagsCount++;
+                flagsCount++
             }
         }
     }
     if (flagsCount === gLevel.MINES && numsCount === (gLevel.SIZE ** 2 - gLevel.MINES)) {
-        isWinner = true;
-        isGameOver = true;
+        isWinner = true
+        isGameOver = true
     } else {
-        isWinner = false;
+        isWinner = false
     }
 
     if (isGameOver) {
-        gGame.isOn = false;
-        showAllMines();
-        clearInterval(gTimer);
+        gGame.isOn = false
+        showAllMines()
+        clearInterval(gTimer)
         if (isWinner) {
             victory()
 
@@ -316,21 +314,6 @@ function showAllMines() {
 }
 
 
-// function checkFlagsCount() {
-//     if (gLevel.MINES === 0) return
-//     else {
-//         var elFlag = document.querySelector('.flagCount')
-//         elFlag.innerText = '0' + gGame.markedCount
-//     }
-// }
-
-function flagCounter() {
-    if (gLevel.MINES === 0) return
-    else {
-        var elFlag = document.querySelector('.flagCount')
-        elFlag.innerHTML = `0${--gLevel.MINES}`
-    }
-}
 
 function checkFlagsCount() {
     var elFlagCount = document.querySelector('.flagCount')
