@@ -5,13 +5,12 @@ const MINE = '💣'
 const SMILEY_FACE = '🙂'
 
 var start = Date.now()
-var lives = 3
 var gBoard
 var gTimer
 var isFirstClick = false
 var gLevel = {
-    SIZE: 8,
-    MINES: 5
+    SIZE: 4,
+    MINES: 2
 };
 var gGame = {
     isOn: false,
@@ -27,16 +26,10 @@ function initGame() {
         markedCount: gLevel.MINES,
         secsPassed: 0
     }
-    // var elLives = document.querySelector('.lives span')
-    // elLives.innerText = lives
     isFirstClick = true
     clearInterval(gTimer)
-    var elBody = document.querySelector('body')
-    elBody.style.backgroundImage = 'none'
     var elHeader1 = document.querySelector('h1')
     elHeader1.innerText = 'MINESWEEPER'
-    elHeader1.style.color = 'rgb(255, 196, 0)'
-    elHeader1.style.fontSize = '35px'
     var elSmileyFace = document.querySelector('.smileyFace')
     elSmileyFace.innerText = '🙂'
     var elTime = document.querySelector('.timer')
@@ -45,6 +38,7 @@ function initGame() {
     console.log('buildBoard(gBoard):', buildBoard(gBoard))
     renderBoard(gBoard)
     checkFlagsCount()
+
 }
 
 function buildBoard() {
@@ -96,7 +90,7 @@ function renderBoard(board) {
 
 
 function cellMarked(currCell) {
-
+  
     if (currCell.isShown) {
         if (currCell.isMine) return MINE
         else if (currCell.minesAroundCount) return currCell.minesAroundCount
@@ -104,9 +98,9 @@ function cellMarked(currCell) {
     } else if (currCell.isMarked) {
         return FLAG
     } else {
-        return EMPTY
+     return EMPTY
     }
-
+   
 }
 
 
@@ -143,13 +137,11 @@ function renderCell(location, value) {
 
 }
 
-
 function cellClicked(event, elCell, i, j) {
-
+    
     const cell = gBoard[i][j]
 
     /////////////////////////////////////
-
 
     if (isFirstClick) {
         createMines(gBoard, i, j)
@@ -170,25 +162,11 @@ function cellClicked(event, elCell, i, j) {
         if (event.button === 2) {
             cell.isMarked = true
             gBoard.markedCount++
-            flagCounter()
-        }
 
+        }
     }
 
     /////////////////////////////////////
-
-    // if(cell.isMarked){
-    //     if (elCell === EMPTY) {
-    //         elCell = FLAG
-    //         gBoard.markedCount++
-    //         flagCounter()
-    //     } else if (elCell === FLAG) {
-    //         elCell = EMPTY
-    //         gBoard.markedCount--
-    //         flagCounter()
-    //     }
-    // }
-
 
     if (!cell.isMarked) {
         if (!cell.isShown) {
@@ -220,34 +198,21 @@ function cellClicked(event, elCell, i, j) {
 
 
 function checkGameOver() {
-    // var lives = 3
+
     var isGameOver = false
     var isWinner
     var numsCount = 0
     var flagsCount = 0
     for (var i = 0; i < gLevel.SIZE; i++) {
         for (var j = 0; j < gLevel.SIZE; j++) {
-            var currCell = gBoard[i][j]
-            if (currCell.isMine && currCell.isShown) {
+            if (gBoard[i][j].isMine && gBoard[i][j].isShown) {
                 isGameOver = true
                 isWinner = false
-                gameOver()
-                // lives--
-                // var elLives = document.querySelector('.lives span')
-                // elLives.innerText = lives
-                // gBoard.markedCount--
-                // if (gGame.shownCount === (gLevel.SIZE ** 2 - gLevel.MINES)) victory()
-                // if (lives === 0) {
-                //     gameOver()
-                //     isGameOver = true
-                //     isWinner = false
-
-                // } 
             }
-            if (!currCell.isMine && currCell.isShown) {
+            if (!gBoard[i][j].isMine && gBoard[i][j].isShown) {
                 numsCount++
             }
-            if (currCell.isMine && !currCell.isShown && currCell.isMarked) {
+            if (gBoard[i][j].isMine && !gBoard[i][j].isShown && gBoard[i][j].isMarked) {
                 flagsCount++
             }
         }
@@ -292,8 +257,6 @@ function victory() {
     elSmileyFace.innerText = '🤩'
     var elHeader1 = document.querySelector('h1')
     elHeader1.innerText = 'Well Done!'
-    var elBody = document.querySelector('body')
-    elBody.style.backgroundImage = "url('img/confetti-40.gif')"
 }
 
 function restart() {
@@ -317,7 +280,6 @@ function expandShown(board, elCell, rowIdx, colIdx, ev) {
 
 
 function setLevel(btnlevel) {
-
     gLevel.SIZE = parseInt(btnlevel.classList[0])
     if (gLevel.SIZE === 4) gLevel.MINES = 2
     if (gLevel.SIZE === 8) gLevel.MINES = 5
@@ -356,22 +318,8 @@ function showAllMines() {
 function checkFlagsCount() {
     var elFlagCount = document.querySelector('.flagCount')
     if (gLevel.MINES < 10) {
-        elFlagCount.innerText = gGame.markedCount
+        elFlagCount.innerText = '0' + gGame.markedCount
     } else {
         elFlagCount.innerText = gGame.markedCount
     }
-}
-
-function flagCounter() {
-    // if (gGame.markedCount === 0) checkGameOver()
-    // else {
-    var elFlag = document.querySelector('.flagCount')
-    if (gLevel.MINES > 0) {
-        elFlag.innerText = --gGame.markedCount
-    } else {
-        elFlag.innerText = --gGame.markedCount
-    }
-
-
-    // }
 }

@@ -46,16 +46,16 @@ const noRightClick = document.querySelector('table');
 noRightClick.addEventListener("contextmenu", e => e.preventDefault());
 
 
-function flagCounter() {
-    if (gLevel.MINES === 0) return checkGameOver()
-    else {
-        var elFlag = document.querySelector('.flagCount')
-        elFlag.innerText = '0' + gGame.markedCount
-    }
-}
+// function checkFlagsCount() {
+//     if (gLevel.MINES === 0) return
+//     else {
+//         var elFlag = document.querySelector('.flagCount')
+//         elFlag.innerText = '0' + gGame.markedCount
+//     }
+// }
 
 // function flagCounter() {
-//     if (gLevel.MINES === 0) return checkGameOver()
+//     if (gLevel.MINES === 0) return
 //     else {
 //         var elFlag = document.querySelector('.flagCount')
 //         elFlag.innerHTML = `0${--gLevel.MINES}`
