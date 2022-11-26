@@ -147,5 +147,5 @@ button:hover {
 
 @font-face {
     font-family: myFirstFont;
-    src: url(/font/Retro-Gaming.ttf);
+    src: url(../font/Retro-Gaming.ttf);
 }
