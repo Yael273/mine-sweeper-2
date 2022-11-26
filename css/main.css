@@ -3,50 +3,65 @@ body {
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: myFirstFont, 'Segoe UI', Tahoma;
     /* font-weight: bold; */
-    background-color: rgb(236, 231, 222);
+    background-color: rgb(237, 224, 198);
     /* background-color: rgb(231, 162, 179); */
     /* background-color: rgb(97, 97, 97); */
 }
-/* .pop{
+
+.pop {
     background-color: rgb(236, 231, 222);
-    background-color: rgb(226, 171, 184);
+    background-color: rgb(175, 175, 174);
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
+    margin-top: -10px;
+    /* border-radius: 10px; */
     display: inline-block;
     border: 2px solid black;
-    box-shadow: 40px 50px 10px 1px;
-} */
-H1 {
-    color: rgb(255, 196, 0);
-    /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
-    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
-    font-weight: bolder;
-    font-size: 35px;
-}
-
-table {
-    margin: auto;
-    background-color: rgb(55, 55, 55);
-}
-
-.cell {
-    background-color: rgb(179, 179, 179);
-    width: 40px;
-    height: 40px;
-    text-align: center;
+    /* box-shadow: 40px 50px 10px 1px; */
     border-bottom: 5px solid #7B7B7B;
     border-left: 5px solid #ffffff;
     border-top: 5px solid #ffffff;
     border-right: 5px solid #7B7B7B;
 }
+H1 {
+    color: black;
+    /* color: rgb(255, 196, 0); */
+    /* -webkit-text-stroke: 1px  rgb(255, 196, 0); */
+    -webkit-text-stroke: 0.2px rgb(48, 48, 48);
+    font-weight: bolder;
+    font-size: 40px;
+    transition: 1s;
+}
+table {
+    margin: auto;
+    background-color: rgb(55, 55, 55);
+    table-layout: auto;
+    width: 350px;
+    height: 350px;
+}
+
+.cell {
+    font-size: 10px;
+    background-color: rgb(179, 179, 179);
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    border-bottom: 5px solid #7B7B7B;
+    border-left: 5px solid #ffffff;
+    border-top: 5px solid #ffffff;
+    border-right: 5px solid #7B7B7B;
+    /* border-radius: 5px; */
+}
 
 .cell:active {
+    font-size: 10px;
     background-color: gray;
     border: none;
 }
-.cell:after{
+
+.cell:after {
+    font-size: 10px;
     background-color: gray;
+    border: none;
 }
 
 .mine {
@@ -58,10 +73,15 @@ table {
 }
 
 .show {
-    background-color: gray
+    background-color: gray;
+    border-bottom: 5px solid gray;
+    border-left: 5px solid gray;
+    border-top: 5px solid gray;
+    border-right: 5px solid gray;
 }
 
 button {
+    color: black;
     font-family: myFirstFont, 'Segoe UI', Tahoma;
     margin-top: 20px;
     /* border: none; */
@@ -75,8 +95,10 @@ button {
 }
 
 button:active {
+    color: rgb(255, 196, 0);
     background-color: gray;
-    border: none;
+    border-left: 2px solid rgb(77, 77, 77);
+    border-top: 2px solid rgb(77, 77, 77);
 }
 
 button:hover {
@@ -88,6 +110,8 @@ button:hover {
 }
 
 .timer {
+    width: 70px;
+    height: 20px;
     margin-bottom: 10px;
     display: inline-block;
     margin-right: 10px;
@@ -101,6 +125,7 @@ button:hover {
 }
 
 .flagCount {
+    width: 23px;
     margin-left: 10px;
     display: inline-block;
     background-color: rgb(20, 19, 19);
@@ -112,7 +137,15 @@ button:hover {
     border-right: 2px solid #7B7B7B;
 }
 
+.copyright {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    margin-right: 85%;
+    margin-bottom: -10px;
+    margin-top: 10px;
+}
+
 @font-face {
     font-family: myFirstFont;
-    src: url(../font/Retro-Gaming.ttf);
+    src: url(/font/Retro-Gaming.ttf);
 }
